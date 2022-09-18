@@ -4,7 +4,7 @@ import time
 import os
 import shutil
 
-flag_to_indicate_that_image_is_classified = 0
+# flag_to_indicate_that_image_is_classified = 0
 
 timeout = 10
 timeout_start = time.time()
@@ -26,8 +26,8 @@ image_folder_path = "D:/Data Science Projects/Project 7/model/images_to_classifi
     
 if os.path.exists(image_folder_path):
     shutil.rmtree(image_folder_path)
-else:
-    os.mkdir(image_folder_path)
+
+os.mkdir(image_folder_path)
 
 count_of_image = 0
 
