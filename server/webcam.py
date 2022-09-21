@@ -29,7 +29,7 @@ if os.path.exists(image_folder_path):
 
 os.mkdir(image_folder_path)
 
-count_of_image = 0
+count_of_image = 827
 
 while time.time() < timeout_start + timeout :
     ret, frame = cap.read()
@@ -42,7 +42,7 @@ while time.time() < timeout_start + timeout :
     if cv2.waitKey(1) == ord('q'):
         break
 
-    imagepath = image_folder_path + "image" + str(count_of_image) + ".png"
+    imagepath = image_folder_path + "training_image" + str(count_of_image) + ".png"
 
     cv2.imwrite(imagepath, image)
     count_of_image +=1
