@@ -10,7 +10,7 @@ cap = cv2.VideoCapture(0)
 
 image_folder_path = "D:/Data Science Projects/Project 7/model/dataset/full_images/person/"
 
-count_of_image = 658
+count_of_image = 0
 
 while time.time() < timeout_start + timeout :
     ret, frame = cap.read()

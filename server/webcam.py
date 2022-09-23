@@ -4,32 +4,19 @@ import time
 import os
 import shutil
 
-# flag_to_indicate_that_image_is_classified = 0
-
 timeout = 10
 timeout_start = time.time()
 cap = cv2.VideoCapture(0)
 
 
-# while time.time() < timeout_start + timeout :
-#     ret, frame = cap.read()
-
-#     image = np.zeros(frame.shape, np.uint8) 
-#     image = frame
-
-#     cv2.imshow('frame',image)
-
-#     if cv2.waitKey(1) == ord('q'):
-#         break
-
-image_folder_path = "D:/Data Science Projects/Project 7/model/images_to_classified/"
+image_folder_path = "./model/images_to_classified/"
     
 if os.path.exists(image_folder_path):
     shutil.rmtree(image_folder_path)
 
 os.mkdir(image_folder_path)
 
-count_of_image = 827
+count_of_image = 0
 
 while time.time() < timeout_start + timeout :
     ret, frame = cap.read()
@@ -42,7 +29,7 @@ while time.time() < timeout_start + timeout :
     if cv2.waitKey(1) == ord('q'):
         break
 
-    imagepath = image_folder_path + "training_image" + str(count_of_image) + ".png"
+    imagepath = image_folder_path + "test_image" + str(count_of_image) + ".png"
 
     cv2.imwrite(imagepath, image)
     count_of_image +=1
