@@ -7,8 +7,8 @@ import cv2
 import time
 import os
 
-__class_name_to_number = {}
-__class_number_to_name = {}
+# __class_name_to_number = {}
+# __class_number_to_name = {}
 
 __model = None
 
@@ -43,7 +43,7 @@ def classify_image():
 
     result = []
     for i in arr_person_prob:
-        if i>0.70:
+        if i>0.65:
             result.append(1)
         else:
             result.append(0)
@@ -68,13 +68,10 @@ def classify_image():
 
     # return result
 
-def class_number_to_name(class_num):
-    return __class_number_to_name[class_num]
-
 def load_saved_artifacts():
     print("loading saved artifacts...start")
-    global __class_name_to_number
-    global __class_number_to_name
+    # global __class_name_to_number
+    # global __class_number_to_name
 
     # with open("artifacts/class_dictionary.json", "r") as f:
     #     __class_name_to_number = json.load(f)
@@ -167,6 +164,7 @@ if __name__ == '__main__':
     if count_of_one > count_of_zero:
         flag_to_indicate_that_image_is_classified = 1
 
+    print(count_of_one/len(resultant_array))
     if flag_to_indicate_that_image_is_classified == 1:
 #   redirect to the homepage
         print('hello')
